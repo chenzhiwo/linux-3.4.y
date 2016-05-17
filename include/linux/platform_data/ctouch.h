@@ -25,7 +25,10 @@ enum {
 	CTP_MAX
 };
 
-#if defined(CONFIG_PLAT_S5P4418_NANOPI2)
+#if defined(CONFIG_PLAT_S5P4418_NANOPI2) &&\
+	( defined(CONFIG_TOUCHSCREEN_GOODIX) || defined(CONFIG_TOUCHSCREEN_FT5X0X) || \
+	  defined(CONFIG_TOUCHSCREEN_IT7260) || \
+	  defined(CONFIG_TOUCHSCREEN_1WIRE) )
 extern unsigned int nanopi2_get_ctp(void);
 extern void nanopi2_set_ctp(int type);
 
